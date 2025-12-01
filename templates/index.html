@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Predicción Enfermedad Cardíaca</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; max-width:600px; margin:40px auto; }
+    label { display:block; margin-top:12px; }
+    input[type="number"] { width:100%; padding:8px; margin-top:4px; }
+    button { margin-top:12px; padding:10px 16px; cursor: pointer; }
+    .result { margin-top:20px; padding:12px; background:#f0f0f0; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <h1>Predicción de Enfermedad Cardíaca</h1>
+
+  <form action="/predict" method="post">
+    <label>
+      Porcentaje de personas que se desplazan en bicicleta al trabajo:
+      <input type="number" step="0.01" name="porcentaje_ciclistas" placeholder="Ej: 12.5" required>
+    </label>
+
+    <label>
+      Porcentaje de personas fumadoras:
+      <input type="number" step="0.01" name="porcentaje_fumadores" placeholder="Ej: 23.4" required>
+    </label>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  {% if prediction %}
+    <div class="result">
+      <strong>Resultado:</strong>
+      <div>{{ prediction }}</div>
+    </div>
+  {% endif %}
+</body>
+</html>
