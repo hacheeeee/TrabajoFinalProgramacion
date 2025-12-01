@@ -1,0 +1,41 @@
+# Entorno virtual
+venv/
+.venv/
+ENV/
+env/
+
+# Carpetas de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos temporales
+*.log
+*.tmp
+*.temp
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de VS Code
+.vscode/
+*.code-workspace
+
+# Archivos de modelo grandes
+models/*.pkl
+
+# Archivos de compilación
+*.egg-info/
+dist/
+build/
+
+# Archivos de pruebas o caché
+.cache/
+pytest_cache/
+.coverage
+
+# Configuración de entorno
+.env
+.env.*
